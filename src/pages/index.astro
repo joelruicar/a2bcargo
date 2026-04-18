@@ -1,11 +1,229 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// src/pages/index.astro
+import '../styles/global.css';
+import { Font } from "astro:assets";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <Font cssVariable="--font-koulen"/>
+   <Font cssVariable="--font-kumbh"/>
+   <Font cssVariable="--font-inter"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A2B Cargo — All Your Shipping Needs in One Place</title>
+  <meta name="description" content="A2B Cargo LLC — Expert freight forwarding, export documentation, AES filing, and logistics support." />
+</head>
+<body>
+  <!-- ══ NAVBAR ══ -->
+  <nav class="navbar">
+    <span class="navbar__brand">A2B Cargo</span>
+    <span class="navbar__tagline">All Your Shipping Needs in One Place</span>
+  </nav>
+
+  <!-- ══ HERO — aerial ship ══ -->
+  <section class="hero">
+    <img
+      class="hero__img"
+      src="../assets/main-photo.jpg"
+      alt="Aerial view of a cargo container ship"
+    />
+  </section>
+
+<div class="page-content">
+  <!-- ══ SERVICES — white card floating over hero ══ -->
+  <section class="services-section">
+    <div class="services-card">
+
+      <!-- Logo -->
+      <div class="logo-wrap">
+        <img class="logo-wrap__img" src="../assets/a2bcargo.png" alt="A2B Cargo Logo" />
+      </div>
+
+      <h2 class="services-title">Our Services</h2>
+      <p class="services-subtitle">Let us help you with any of our areas of expertise</p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="service-card__label">Logistics support</span>
+          <img src="../assets/conveyor-belt.svg"/>
+        </div>
+        <div class="service-card">
+          <span class="service-card__label">AES filing</span>
+           <img src="../assets/files.svg"/>
+        </div>
+        <div class="service-card">
+          <span class="service-card__label">Ocean & Truck Rate Quotation</span>
+           <img src="../assets/safety.svg"/>
+        </div>
+        <div class="service-card">
+          <span class="service-card__label">Export documentation</span>
+           <img src="../assets/cases.svg"/>
+        </div>
+        <div class="service-card">
+          <span class="service-card__label">Consulting export regulations</span>
+           <img src="../assets/boat.svg"/>
+        </div>
+        <div class="service-card">
+          <span class="service-card__label">Contract negotiations</span>
+           <img src="../assets/conveyor-belt.svg"/>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ ABOUT US ══ -->
+  <section class="about-section">
+    <div class="about-outer">
+      <div class="about-bg">
+
+        <h2 class="about-heading">About Us</h2>
+
+        <div class="about-inner">
+          <div class="about-left">
+            <p class="about-subheading">Not the biggest, but the best</p>
+            <p class="about-text">
+              We can handle all aspects of your shipment from scheduling load
+              appointments at your plant or warehouse, setting up trucks to transport
+              the cargo to port of load, filling export declarations with US Customs
+              and issuance of export documents.
+            </p>
+          </div>
+          <div class="about-right">
+            <img
+              class="about-img"
+              src="/assets/diego-fernandez-6Vg8N8u61aI-unsplash.jpg"
+              alt="Container ship at port"
+            />
+          </div>
+        </div>
+
+        <div class="about-badges">
+          <div class="about-badge">The job is not done until your cargo arrives at the destination</div>
+          <div class="about-badge">Single point of contact</div>
+          <div class="about-badge">Cost effective and reliable forwarding service</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WHAT WE PROVIDE ══ -->
+  <section class="provides-section">
+    <div class="provides-outer">
+      <div class="provides-banner">
+        <h2>What We Provide</h2>
+      </div>
+      <div class="provides-row">
+        <div class="provides-item">Door-to-door service</div>
+        <div class="provides-item">Accurate and timely documentation</div>
+        <div class="provides-item">Competitive ocean rates</div>
+      </div>
+      <div class="provides-row provides-row--2col">
+        <div class="provides-item">Experienced and helpful staff</div>
+        <div class="provides-item">Always a live person to contact</div>
+      </div>
+    </div>
+  </section>
+  <!-- ══ ALWAYS HERE BANNER ══ -->
+  <div class="always-section">
+    <img
+      class="always-section__img"
+      src="/assets/paul-teysen-bukjsECgmeU-unsplash.jpg"
+      alt="Stacked shipping containers"
+    />
+    <div class="always-section__overlay">
+      <div class="always-pill">
+        <h2>Always Here to Help You</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CONTACT ══ -->
+  <section class="contact-section" id="contact">
+    <!-- Background image: stacked containers -->
+    <img
+      class="contact-section__bgimg"
+      src="/assets/paul-teysen-bukjsECgmeU-unsplash.jpg"
+      alt=""
+      aria-hidden="true"
+    />
+
+    <div class="contact-section__inner">
+
+      <!-- Three info cards -->
+      <div class="info-row">
+        <div class="info-card">
+          <strong>Main:</strong> (678) 229–2539<br/>
+          <strong>Cell:</strong> (678) 934–1335
+        </div>
+        <div class="info-card">
+          A2B Cargo LLC<br/>
+          1255 Rolling Oaks Drive<br/>
+          Kennesaw, GA 30152<br/>
+          FMC# 0205050F
+        </div>
+        <div class="info-card">
+          <a href="mailto:Dave@a2bcargo.com">Dave@a2bcargo.com</a>
+        </div>
+      </div>
+
+      <!-- Netlify Form -->
+      <p class="contact-form-label">Contact us</p>
+
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        accept-charset="UTF-8"
+        class="contact-form"
+        action="/success"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="form-honeypot" aria-hidden="true">
+          <label>
+            Do not fill this field if you are human:
+            <input name="bot-field" tabindex="-1" autocomplete="off" />
+          </label>
+        </p>
+
+        <!-- Left: Name / Email / Phone -->
+        <div class="form-col-left">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">*Phone</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+        </div>
+
+        <!-- Right: Message -->
+        <div class="form-col-right">
+          <div class="form-group--message">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="form-submit-row">
+          <button type="submit" class="btn-submit">submit</button>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
