@@ -8,10 +8,8 @@
   --amber:         #E9A643;
   --amber-dark:    #e09416;
   --white:         #ffffff;
-  --black:         #000000;
-  --light-blue-bg: #dce8f5;
+  --black:         #0E2A65;
   --card-blue:     #364D9F;
-  --text-dark:     #222222;
   --text-mid:      #555555;
   --radius-card:   12px;
   --transition:    all .2s ease;
@@ -21,7 +19,7 @@
 html { scroll-behavior: smooth; }
 body {
   font-family: 'Open Sans', sans-serif;
-  color: var(--text-dark);
+  color: var(--black);
   background: var(--navy-dark);
   overflow-x: hidden;
 }
@@ -34,8 +32,9 @@ a   { text-decoration: none; color: inherit; }
   position: relative;
   z-index: 2;
   margin: 0 auto;
-  margin-top: clamp(-3rem, -2.5vw, -1.5rem);
-  border-radius: 21px
+  margin-top: clamp(-4.5rem, -3.5vw, -2rem);
+  border-radius: 24px 24px 0 0;
+  overflow: hidden;
 }
 /* ════════════════════════════════════════
    NAVBAR
@@ -56,13 +55,6 @@ a   { text-decoration: none; color: inherit; }
   letter-spacing: .02em;
   text-transform: none;
 }
-.navbar__tagline {
-  font-size: .68rem;
-  color: var(--white);
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  font-weight: 400;
-}
 
 /* ════════════════════════════════════════
    HERO
@@ -70,7 +62,30 @@ a   { text-decoration: none; color: inherit; }
 .hero {
   width: 100%;
   height: 30rem;
-  overflow: hidden;
+  overflow: hidden;  
+  position: relative;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 1rem 2rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero__tagline {
+  font-family: var(--font-koulen);
+  font-size: 1.4rem;
+  color: var(--white);
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0;
+  text-align: right;
 }
 .hero__img {
   width: 100%;
@@ -78,13 +93,14 @@ a   { text-decoration: none; color: inherit; }
   object-fit: cover;
   object-position: center 40%;
       -webkit-transform: scale(-1);
+       display: block;
+  /* height: auto; */
 }
 
 /* ════════════════════════════════════════
    SERVICES — white card overlapping hero
    ════════════════════════════════════════ */
 .services-section {
-  background: var(--light-blue-bg);
   padding: 0 1.5rem 2.5rem;
 }
 
@@ -93,25 +109,29 @@ a   { text-decoration: none; color: inherit; }
   flex-direction: column;
   align-items: center;
   margin-bottom: 1.2rem;
+  margin-top: 1.2rem;
 }
+
 .logo-wrap__img {
-  height: 68px;
+  height: 9.5rem;
   object-fit: contain;
 }
 
 .services-title {
-  font-size: 1.2rem;
+  font-family: var(--font-koulen);
+  font-size: 1.5rem;
   font-weight: 700;
-  color: var(--navy);
+  color: #2F6690;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: .06em;
   margin-bottom: .2rem;
 }
 .services-subtitle {
+  font-family: var(--font-kumbh);
   text-align: center;
-  color: var(--text-mid);
-  font-size: .84rem;
+  color: #2F6690;
+  font-size: 1.5rem;
   margin-bottom: 1.4rem;
 }
 
@@ -158,7 +178,6 @@ a   { text-decoration: none; color: inherit; }
    ABOUT US
    ════════════════════════════════════════ */
 .about-section {
-  background: var(--light-blue-bg);
   padding: 0 1.5rem 0;
 }
 .about-outer {
@@ -166,9 +185,7 @@ a   { text-decoration: none; color: inherit; }
   margin: 0 auto;
 }
 
-/* Large light-blue rounded block */
 .about-bg {
-  background: var(--light-blue-bg);
   border-radius: 22px;
   padding: 2rem 1.8rem 1.2rem;
 }
@@ -193,7 +210,7 @@ a   { text-decoration: none; color: inherit; }
 .about-subheading {
   font-size: .88rem;
   font-weight: 700;
-  color: var(--text-dark);
+  color: var(--black);
   margin-bottom: .5rem;
 }
 .about-text {
@@ -231,7 +248,6 @@ a   { text-decoration: none; color: inherit; }
    WHAT WE PROVIDE
    ════════════════════════════════════════ */
 .provides-section {
-  background: var(--light-blue-bg);
   padding: 1rem 1.5rem 0;
 }
 .provides-outer {
@@ -271,7 +287,7 @@ a   { text-decoration: none; color: inherit; }
 }
 .provides-item {
   font-size: .8rem;
-  color: var(--text-dark);
+  color: var(--black);
   padding: .25rem;
 }
 
@@ -410,7 +426,7 @@ a   { text-decoration: none; color: inherit; }
   border-radius: 4px;
   padding: .42rem .65rem;
   font-size: .8rem;
-  color: var(--text-dark);
+  color: var(--black);
   outline: none;
   width: 100%;
   transition: var(--transition);
@@ -439,7 +455,7 @@ a   { text-decoration: none; color: inherit; }
   padding: .42rem .65rem;
   font-size: .8rem;
   font-family: 'Open Sans', sans-serif;
-  color: var(--text-dark);
+  color: var(--black);
   outline: none;
   resize: none;
   min-height: 138px;
@@ -489,7 +505,9 @@ a   { text-decoration: none; color: inherit; }
   .hero            { height: 180px; }
   .services-card   { margin-top: -20px; }
   .navbar__tagline { display: none; }
-  .page-content    { margin-top: -1rem; }
+  .page-content    { margin-top: -1.5rem; border-radius: 18px 18px 0 0; }
+  .hero__overlay   { padding: .75rem 1rem; }
+  .hero__tagline   { font-size: .58rem; letter-spacing: .12em; }
 }
 
 @media (orientation: portrait) {
