@@ -2,7 +2,7 @@
   "name": "a2bcargo",
   "type": "module",
   "version": "1.0.0",
-  "description": "A2B Cargo — All Your Shipping Needs in One Place",
+  "description": "A2B Cargo",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
