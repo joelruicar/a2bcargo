@@ -7,9 +7,9 @@ import { Font } from "astro:assets";
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <Font cssVariable="--font-koulen"/>
-   <Font cssVariable="--font-kumbh"/>
-   <Font cssVariable="--font-inter"/>
+  <Font cssVariable="--font-koulen"/>
+  <Font cssVariable="--font-kumbh"/>
+  <Font cssVariable="--font-inter"/>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A2B Cargo - We'll Get It There</title>
@@ -64,7 +64,7 @@ import { Font } from "astro:assets";
            <img src="../assets/cases.svg"/>
         </div>
         <div class="service-card">
-          <span class="service-card__label">Consulting export regulations</span>
+          <span class="service-card__label">Consulting export</br> regulations</span>
            <img src="../assets/boat.svg"/>
         </div>
         <div class="service-card">
@@ -224,3 +224,13 @@ import { Font } from "astro:assets";
 
 </body>
 </html>
+<script>
+  const heroImg = document.querySelector('.hero__img') as HTMLElement | null;
+
+  window.addEventListener('scroll', () => {
+    const scrollValue = window.scrollY;
+    if (heroImg) {
+      heroImg.style.transform = `translateY(${scrollValue * 0.9}px) scale(-1)`;
+    }
+  });
+</script>
