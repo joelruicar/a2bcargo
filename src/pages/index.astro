@@ -129,9 +129,7 @@ import { Font } from "astro:assets";
       </div>
     </div>
   </section>
-  <!-- ══ ALWAYS HERE BANNER ══ -->
-
-
+    <!-- ══ ALWAYS HERE BANNER ══ -->
   <!-- ══ CONTACT ══ -->
   <section class="contact-section" id="contact">
     <!-- Background image: stacked containers -->
@@ -144,7 +142,7 @@ import { Font } from "astro:assets";
   <div class="always-section">
     <div class="always-section__overlay">
       <div class="always-pill">
-        <h2>Always Here to Help You</h2>
+        <h2>ALWAYS HERE TO HELP YOU</h2>
       </div>
     </div>
   </div>
@@ -168,59 +166,60 @@ import { Font } from "astro:assets";
       </div>
 
       <!-- Netlify Form -->
-      <p class="contact-form-label">Contact us</p>
+      <div class="contact-form-bckr">
+        <p class="contact-form-label">Contact us</p>
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          accept-charset="UTF-8"
+          class="contact-form"
+          action="/success"
+        >
+          <input type="hidden" name="form-name" value="contact" placeholder="John"/>
+          <p class="form-honeypot" aria-hidden="true">
+            <label>
+              Do not fill this field if you are human:
+              <input name="bot-field" tabindex="-1" autocomplete="off" />
+            </label>
+          </p>
 
-      <form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        accept-charset="UTF-8"
-        class="contact-form"
-        action="/success"
-      >
-        <input type="hidden" name="form-name" value="contact" />
-        <p class="form-honeypot" aria-hidden="true">
-          <label>
-            Do not fill this field if you are human:
-            <input name="bot-field" tabindex="-1" autocomplete="off" />
-          </label>
-        </p>
-
-        <!-- Left: Name / Email / Phone -->
-        <div class="form-col-left">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required />
+          <!-- Left: Name / Email / Phone -->
+          <div class="form-col-left">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">*Phone</label>
+              <input type="tel" id="phone" name="phone" />
+            </div>
           </div>
-          <div class="form-group">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="phone">*Phone</label>
-            <input type="tel" id="phone" name="phone" />
-          </div>
-        </div>
 
-        <!-- Right: Message -->
-        <div class="form-col-right">
-          <div class="form-group--message">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
+          <!-- Right: Message -->
+          <div class="form-col-right">
+            <div class="form-group--message">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
           </div>
-        </div>
 
-        <!-- Submit -->
-        <div class="form-submit-row">
-          <button type="submit" class="btn-submit">submit</button>
-        </div>
-
-      </form>
+          <!-- Submit -->
+          <div class="form-submit-row">
+            <button type="submit" class="btn-submit">submit</button>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
 
-</div>
+    <div class="footbar"></div>
+
 
 </body>
 </html>

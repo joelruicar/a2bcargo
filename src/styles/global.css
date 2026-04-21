@@ -39,7 +39,6 @@ a   { text-decoration: none; color: inherit; }
   z-index: 2;
   margin: -14.6rem auto 0;
   border-radius: 24px 24px 0 0;
-  padding-bottom: 4rem;
 }
 
 /* ════════════════════════════════════════
@@ -58,7 +57,7 @@ a   { text-decoration: none; color: inherit; }
   width: 100%;
 }
 .navbar__brand {
-  font-family: var(--font-koulen), cursive;
+  font-family: var(--font-koulen);
   font-size: 1.9rem;
   font-weight: 400;
   color: var(--white);
@@ -79,8 +78,7 @@ a   { text-decoration: none; color: inherit; }
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
-  padding: clamp(6.2rem, 6vh, 5rem) clamp(2rem, 12vw, 18.5rem) 1rem;
-  /* z-index: 2; */
+  padding: clamp(6.2rem, 6vh, 5rem) clamp(2rem, 12vw, 18.5rem);
   pointer-events: none;
 }
 .hero__tagline {
@@ -237,6 +235,9 @@ a   { text-decoration: none; color: inherit; }
   font-family: var(--font-inter);
   font-size: 1.6rem;
   font-weight:900;
+  position: relative;
+  top: -2.4rem;
+  left: -2rem;
 }
 .about-left {
   padding-top: clamp(1rem, 2vw, 2.2rem);
@@ -248,7 +249,6 @@ a   { text-decoration: none; color: inherit; }
   line-height: 1.4;
   color: var(--navy-dark);
   text-align: justify;
-  margin-top: 0.8rem;
 }
 
 .about-right {
@@ -303,7 +303,7 @@ a   { text-decoration: none; color: inherit; }
   border-radius:  100px 0 100px 00px; 
   position: relative;
   z-index: 1;
-  margin-bottom: 2rem;
+  margin-bottom: -5rem;
 }
 
 .provides-outer {
@@ -331,42 +331,55 @@ a   { text-decoration: none; color: inherit; }
 .provides-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
   text-align: center;
+  gap: 13rem;
 }
 
 .provides-row--2col {
   grid-template-columns: 1fr 1fr;
-  margin-top: 1.5rem;
+  margin-top: 1.8rem;
+  gap: 15rem;
 }
 
 .provides-item {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: var(--black);
   font-family: var(--font-kumbh);
   color: var(--aqua);
+  white-space: nowrap;
 }
+
 /* ════════════════════════════════════════
    ALWAYS HERE SECTION
    ════════════════════════════════════════ */
 .always-section {
   position: relative;
   height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.always-section__overlay {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .always-pill {
   background: rgba(0, 0, 0, 0.33);
-  padding: 0.9rem 3rem;
+  padding: 1rem 3.2rem;
   backdrop-filter: blur(2px);
-  border-radius: 25px
+  border-radius: 16px;
+  width: fit-content;
 }
 
 .always-pill h2 {
   font-family: var(--font-kumbh);
-  font-size: 1.2rem;
+  font-size: 1.9rem;
   color: var(--white);
-  text-transform: uppercase;
+  margin: 0;
   letter-spacing: 0.1em;
 }
 
@@ -375,10 +388,18 @@ a   { text-decoration: none; color: inherit; }
    ════════════════════════════════════════ */
 .contact-section {
   position: relative;
-  padding: 9rem 2rem ;
-  top: -9.7rem;
+  padding: 8rem 8.4rem ;
+  margin-top: 0;
+  background: var(--navy-dark);
 }
 
+.contact-form-bckr{
+  font-family: var(--font-kumbh);
+  border-radius: 18px;
+  background: var(--card-blue);
+  padding: 0.25rem 0.9rem 1.15rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.24);
+}
 .contact-section__bgimg {
   position: absolute;
   inset: 0;
@@ -386,32 +407,34 @@ a   { text-decoration: none; color: inherit; }
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  border-radius: 50px
+  border-radius: 50px 0 50px 50px;
+  opacity: 0.5;
+  filter: saturate(80%) brightness(1.05) contrast(0.95);
 }
 
 .contact-section__inner {
   position: relative;
   z-index: 1;
-  max-width: var(--section-max);
+  max-width: 1080px;
   margin: 0 auto;
 }
 
 .info-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: 1.8rem;
+  margin-bottom: 1.9rem;
 }
 
 .info-card {
   background: var(--blue-light);
-  border-radius: 8px;
-  padding: 1.5rem;
+  border-radius: 14px;
+  padding: 1.85rem 1.35rem;
   text-align: center;
   color: var(--navy-dark);
   font-weight: 600;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.35;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
@@ -423,20 +446,16 @@ a   { text-decoration: none; color: inherit; }
 .contact-form-label {
   text-align: center;
   color: var(--white);
-  font-size: 1.2rem;
+  font-size: 2.1rem;
   font-weight: 700;
-  margin-bottom: 1rem;
-  background: var(--card-blue)
+  font-family: var(--font-inter);
+  margin: 0.25rem 0 0.85rem;
 }
 
 .contact-form {
-  background: var(--card-blue);
-  border-radius: 12px;
-  padding: 2.5rem;
+  padding: 1.75rem 1.85rem 1.3rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
 .form-col-left {
@@ -459,15 +478,14 @@ a   { text-decoration: none; color: inherit; }
 .form-group label, .form-group--message label {
   color: var(--white);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 2rem;
 }
 
 .form-group input, .form-group--message textarea {
   width: 100%;
-  padding: 0.8rem;
-  border-radius: 4px;
-  border: none;
-  font-family: 'Open Sans', sans-serif;
+  padding: 0.9rem;
+  border-radius: 6px;
+  /* border: none; */
 }
 .form-honeypot {
   position: absolute;
@@ -478,12 +496,12 @@ a   { text-decoration: none; color: inherit; }
 }
 .form-group--message textarea {
   height: 100%;
-  min-height: 250px;
+  min-height: 290px;
   resize: none;
 }
 
 .form-submit-row {
-  grid-column: 1 / -1;
+  /* grid-column: 1 / -1; */
   display: flex;
   justify-content: center;
 }
@@ -492,8 +510,8 @@ a   { text-decoration: none; color: inherit; }
   background: var(--amber);
   color: var(--white);
   border: none;
-  padding: 0.8rem 4rem;
-  border-radius: 6px;
+  padding: 0.95rem 4.6rem;
+  border-radius: 14px;
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
@@ -504,34 +522,59 @@ a   { text-decoration: none; color: inherit; }
   background: var(--amber-dark);
 }
 
+.footbar {
+  background: var(--navy-dark);
+  width: 100%;
+  min-height: 4rem;
+  position: relative;
+}
+
 /* ════════════════════════════════════════
    RESPONSIVE
    ════════════════════════════════════════ */
 @media (max-width: 900px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .provides-section {
-    padding: .35rem 0.9rem 2rem;
+  .about-section {
+    padding: 6rem 1rem 8rem;
   }
-  .provides-banner {
-    width: min(96%, 420px);
-    padding: 1.1rem .9rem;
-    transform: translate(-50%, -62%);
+  .provides-section {
+    padding: 0.8rem 0.9rem 2rem;
   }
   .provides-banner h2 {
-    font-size: 1.35rem;
+    font-size: clamp(1rem, 5.2vw, 1.35rem);
     line-height: 1.05;
+    width: min(94%, 24rem);
+    padding: 0.9rem 0.8rem;
+    transform: translate(-50%, -58%);
+    border-radius: 12px;
   }
-  .provides-row,
+  .provides-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
   .provides-row--2col {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin-top: 1rem;
+  }
+  .provides-item {
+    white-space: normal;
+    font-size: clamp(1rem, 3.8vw, 1.2rem);
   }
   .about-inner {
     grid-template-columns: 1fr;
     margin-left: 0;
   }
+  .about-heading {
+    left: 1.2rem;
+    top: -2.8rem;
+  }
   .about-left {
     padding-top: 0.4rem;
+  }
+  .about-subheading {
+    top: -0.2rem;
+    left: 0;
   }
   .about-img { transform: translateY(2rem); }
   .about-badges { 
@@ -542,6 +585,41 @@ a   { text-decoration: none; color: inherit; }
   }
   .contact-form { grid-template-columns: 1fr; }
   .info-row { grid-template-columns: 1fr; }
+  .always-pill {
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+  }
+  .always-pill h2 {
+    font-size: 1rem;
+  }
+  .contact-section {
+    padding: 6.5rem 1rem 1.2rem;
+    margin-top: 0.8rem;
+  }
+  .contact-section__inner {
+    max-width: 100%;
+  }
+  .contact-form-bckr {
+    padding: 0.2rem 0.35rem 0.8rem;
+  }
+  .contact-form-label {
+    font-size: 1.4rem;
+  }
+  .contact-form {
+    padding: 1.1rem;
+    gap: 1rem;
+  }
+  .info-card {
+    font-size: 1.1rem;
+    padding: 1.2rem;
+  }
+  .form-group label,
+  .form-group--message label {
+    font-size: 1rem;
+  }
+  .form-group--message textarea {
+    min-height: 220px;
+  }
   .about-bg::before {
    inset: 0; 
   }
