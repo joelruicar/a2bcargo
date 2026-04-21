@@ -281,8 +281,11 @@ a   { text-decoration: none; color: inherit; }
 .about-badge {
   background: var(--card-blue);
   color: var(--white);
-  padding: 2.8rem 1rem;
-  font-size: 1.4em;
+  width: clamp(10.5rem, 13vw, 12.5rem);
+  min-height: clamp(10.5rem, 13vw, 12.5rem);
+  padding: 1rem;
+  font-size: clamp(1.05rem, 1.25vw, 1.3rem);
+  line-height: 1.2;
   text-align: center;
   font-weight: 500;
   display: flex;
@@ -355,38 +358,39 @@ a   { text-decoration: none; color: inherit; }
    ════════════════════════════════════════ */
 .always-section {
   position: relative;
-  height: 120px;
+  height: 100px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
-.always-section__overlay {
+/* .always-section__overlay {
   width: 100%;
   display: flex;
   justify-content: center;
-}
+} */
 
 .always-pill {
   background: rgba(0, 0, 0, 0.33);
-  padding: 1rem 3.2rem;
-  backdrop-filter: blur(2px);
-  border-radius: 16px;
+  padding: 1rem 2.2rem;
+  backdrop-filter: blur(1px);
+  border-radius: 15px;
   width: fit-content;
 }
 
 .always-pill h2 {
-  font-family: var(--font-kumbh);
-  font-size: 1.9rem;
+  font-family: var(--font-koulen);
+  font-size: 1.5rem;
   color: var(--white);
   margin: 0;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.2em;
 }
 
 /* ════════════════════════════════════════
    CONTACT SECTION
    ════════════════════════════════════════ */
 .contact-section {
+  
   position: relative;
   padding: 8rem 8.4rem ;
   margin-top: 0;
@@ -420,6 +424,8 @@ a   { text-decoration: none; color: inherit; }
 }
 
 .info-row {
+  
+  margin-top: 2.2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.8rem;
@@ -431,23 +437,26 @@ a   { text-decoration: none; color: inherit; }
   border-radius: 14px;
   padding: 1.85rem 1.35rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: var(--navy-dark);
   font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.35;
+  /* font-size: 1rem; */
+  /* line-height: 1.35; */
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .info-card a {
-  color: var(--navy);
   text-decoration: underline;
 }
 
 .contact-form-label {
   text-align: center;
   color: var(--white);
-  font-size: 2.1rem;
-  font-weight: 700;
+  font-size: 1.8rem;
+  font-weight: 900;
   font-family: var(--font-inter);
   margin: 0.25rem 0 0.85rem;
 }
@@ -456,12 +465,19 @@ a   { text-decoration: none; color: inherit; }
   padding: 1.75rem 1.85rem 1.3rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  /* column-gap: 2.6rem; */
 }
 
 .form-col-left {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.3rem;
+  align-items: stretch;
+}
+
+.form-col-left .form-group {
+  width: 100%;
+  max-width: 25rem;
 }
 
 .form-col-right {
@@ -478,7 +494,8 @@ a   { text-decoration: none; color: inherit; }
 .form-group label, .form-group--message label {
   color: var(--white);
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.3rem;
+  margin-left: .5rem;
 }
 
 .form-group input, .form-group--message textarea {
@@ -501,11 +518,11 @@ a   { text-decoration: none; color: inherit; }
 }
 
 .form-submit-row {
-  /* grid-column: 1 / -1; */
+  grid-column: 1;
   display: flex;
   justify-content: center;
+  max-width: 25rem; /* Debe coincidir con el max-width de los inputs de la izquierda */
 }
-
 .btn-submit {
   background: var(--amber);
   color: var(--white);
@@ -513,6 +530,7 @@ a   { text-decoration: none; color: inherit; }
   padding: 0.95rem 4.6rem;
   border-radius: 14px;
   font-weight: 700;
+  font-size: 1.2rem;
   text-transform: uppercase;
   cursor: pointer;
   transition: var(--transition);
@@ -533,6 +551,9 @@ a   { text-decoration: none; color: inherit; }
    RESPONSIVE
    ════════════════════════════════════════ */
 @media (max-width: 900px) {
+  .always-section {
+  justify-content: center;
+}
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .about-section {
     padding: 6rem 1rem 8rem;
@@ -582,6 +603,12 @@ a   { text-decoration: none; color: inherit; }
     grid-template-columns: 1fr; 
     width: 100%; 
     margin-top: 4rem;
+  }
+  .about-badge {
+    width: min(100%, 100rem);
+    min-height: 0;
+    /* padding: 1.2rem 1rem; */
+    font-size: 1.1rem;
   }
   .contact-form { grid-template-columns: 1fr; }
   .info-row { grid-template-columns: 1fr; }
