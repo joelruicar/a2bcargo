@@ -555,6 +555,11 @@ a   { text-decoration: none; color: inherit; }
    RESPONSIVE
    ════════════════════════════════════════ */
 @media (max-width: 900px) {
+  .page-content {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
   .always-section {
   justify-content: center;
 }
