@@ -9,11 +9,22 @@ import '@fontsource/inter';
 
 <!DOCTYPE html>
 <html lang="en">
+<link rel="canonical" href="https://www.a2bcargo.com/" />
+
+<!-- Open Graph (para compartir en redes/WhatsApp/LinkedIn) -->
+<meta property="og:title" content="A2B Cargo — Expert Freight Forwarding & Export Services" />
+<meta property="og:description" content="A2B Cargo LLC handles all aspects of your shipment: AES filing, export documentation, ocean & truck rates, and logistics support." />
+<meta property="og:image" content="https://www.a2bcargo.com/assets/og-image.jpg" />
+<meta property="og:url" content="https://www.a2bcargo.com/" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A2B Cargo - We'll Get It There</title>
-  <meta name="description" content="A2B Cargo LLC — Expert freight forwarding, export documentation, AES filing, and logistics support." />
+
+<meta name="description" content="A2B Cargo LLC, Kennesaw GA — Freight forwarding, AES filing, ocean & truck rate quotation, export documentation and consulting. Door-to-door service with a single point of contact." />
 </head>
 <body>
   <!-- ══ NAVBAR ══ -->
@@ -27,9 +38,10 @@ import '@fontsource/inter';
       class="hero__img"
       src="../assets/main-photo.jpg"
       alt="Aerial view of a cargo container ship"
+      fetchpriority="high"
     />
     <div class="hero__overlay">
-      <h4 class="hero__tagline">All Your Shipping Needs in One Place</h4>
+      <h1 class="hero__tagline">All Your Shipping Needs in One Place</h1>
     </div>
   </section>
 
@@ -49,27 +61,27 @@ import '@fontsource/inter';
       <div class="services-grid">
         <div class="service-card">
           <span class="service-card__label">Logistics </br> support</span>
-          <img src="../assets/conveyor-belt.svg"/>
+          <img src="../assets/conveyor-belt.svg" alt="Conveyor belt"/>
         </div>
         <div class="service-card">
           <span class="service-card__label">AES filing</span>
-        <img src="../assets/files.svg"/>
+        <img src="../assets/files.svg" alt="File folder"/>
         </div>
         <div class="service-card">
           <span class="service-card__label">Ocean & Truck Rate Quotation</span>
-           <img src="../assets/safety.svg"/>
+           <img src="../assets/safety.svg"/ alt="Safety shield">
         </div>
         <div class="service-card">
           <span class="service-card__label">Export documentation</span>
-           <img src="../assets/cases.svg"/>
+           <img src="../assets/cases.svg" alt="Briefcases"/>
         </div>
         <div class="service-card">
           <span class="service-card__label">Consulting export</br> regulations</span>
-           <img src="../assets/boat.svg"/>
+           <img src="../assets/boat.svg" alt="Boat sailing"/>
         </div>
         <div class="service-card">
           <span class="service-card__label">Contract </br> negotiations</span>
-           <img src="../assets/conveyor-belt.svg"/>
+           <img src="../assets/conveyor-belt.svg" alt="Conveyor belt"/>
         </div>
       </div>
 
@@ -98,6 +110,7 @@ import '@fontsource/inter';
               class="about-img"
               src="/assets/cargo-ship.jpg"
               alt="Container ship at port"
+              loading="lazy"
             />
           </div>
         </div>
@@ -136,8 +149,9 @@ import '@fontsource/inter';
     <img
       class="contact-section__bgimg"
       src="/assets/containers.jpg"
-      alt=""
+      alt="Containers"
       aria-hidden="true"
+      loading="lazy"
     />
   <div class="always-section">
     <div class="always-section__overlay">
@@ -218,8 +232,27 @@ import '@fontsource/inter';
     </div>
   </section>
 
-    <div class="footbar"></div>
+  <div class="footbar"></div>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FreightForwarder",
+    "name": "A2B Cargo LLC",
+    "url": "https://www.a2bcargo.com",
+    "telephone": "+16782292539",
+    "email": "Dave@a2bcargo.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1255 Rolling Oaks Drive",
+      "addressLocality": "Kennesaw",
+      "addressRegion": "GA",
+      "postalCode": "30152",
+      "addressCountry": "US"
+    },
+    "description": "Expert freight forwarding, AES filing, export documentation and logistics support."
+  }
+  </script>
 
 </body>
 </html>
