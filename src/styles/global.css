@@ -18,9 +18,9 @@
   --content-gutter: 2rem;
   --radius-card:   12px;
   --transition:    all .2s ease;
-  --font-koulen: 'Koulen', sans-serif;
-  --font-kumbh: 'Kumbh Sans', sans-serif;
-  --font-inter: 'Inter', sans-serif;
+  --font-koulen: 'Koulen';
+  --font-kumbh: 'Kumbh Sans';
+  --font-inter: 'Inter';
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
