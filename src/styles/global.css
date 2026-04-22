@@ -555,11 +555,14 @@ a   { text-decoration: none; color: inherit; }
    RESPONSIVE
    ════════════════════════════════════════ */
 @media (max-width: 900px) {
-  .page-content {
+   .page-content {
     width: 100%;
-    margin: 0;
-    border-radius: 0;
   }
+  .navbar__brand {
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: .0em;
+}
   .always-section {
   justify-content: center;
 }
