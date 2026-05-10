@@ -1,5 +1,5 @@
 /* ===========================
-   A2B CARGO — Updated Styles
+   A2B CARGO Styles
    =========================== */
 
 :root {
@@ -12,11 +12,11 @@
   --card-blue:     #364D9F;
   --aqua:          #16425B;
   --blue-light:    #D1E6E9;
+  --blue-services: #2F6690;
   --shadow:        rgba(0, 0, 0, 0.15);
   --content-max:   1400px; 
   --section-max:   1200px;
   --content-gutter: 2rem;
-  --radius-card:   12px;
   --transition:    all .2s ease;
   --font-koulen: 'Koulen';
   --font-kumbh: 'Kumbh Sans';
@@ -51,7 +51,6 @@ a   { text-decoration: none; color: inherit; }
   background: var(--navy-dark);
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 0 4rem;
   height: 64px;
   position: sticky;
@@ -62,7 +61,6 @@ a   { text-decoration: none; color: inherit; }
 .navbar__brand {
   font-family: var(--font-koulen);
   font-size: 1.9rem;
-  font-weight: 400;
   color: var(--white);
   letter-spacing: .02em;
 }
@@ -79,9 +77,8 @@ a   { text-decoration: none; color: inherit; }
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: flex-start;
   justify-content: flex-end;
-  padding: clamp(6.2rem, 6vh, 5rem) clamp(2rem, 12vw, 18.5rem);
+  padding: clamp(4rem, 3vh, 2rem) clamp(2rem, 12vw, 18.5rem);
   pointer-events: none;
 }
 .hero__tagline {
@@ -111,9 +108,7 @@ a   { text-decoration: none; color: inherit; }
 .logo-wrap {
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-bottom: 2rem;
-  margin-top: 1.5rem;
 }
 
 .logo-wrap__img {
@@ -125,7 +120,7 @@ a   { text-decoration: none; color: inherit; }
 .services-title {
   font-family: var(--font-koulen);
   font-size: 2rem;
-  color: #2F6690;
+  color: var(--blue-services);
   text-align: center;
   text-transform: uppercase;
   letter-spacing: .06em;
@@ -135,7 +130,7 @@ a   { text-decoration: none; color: inherit; }
 .services-subtitle {
   font-family: var(--font-kumbh);
   text-align: center;
-  color: #2F6690;
+  color: var(--blue-services);
   font-size: 1.7rem;
   margin-bottom: 1.8rem;
 }
@@ -146,7 +141,6 @@ a   { text-decoration: none; color: inherit; }
   font-family: var(--font-inter);
   max-width: 1100px;
   width: 100%;
-  justify-content: center;
   column-gap: 5rem;
   row-gap: 4rem;
   margin: 0 auto;
@@ -154,7 +148,7 @@ a   { text-decoration: none; color: inherit; }
 
 .service-card {
   background: var(--amber);
-  border-radius: var(--radius-card);
+  border-radius: 12px;
   width: 100%;
   padding: .95rem .8rem .75rem;
   display: flex;
@@ -181,8 +175,8 @@ a   { text-decoration: none; color: inherit; }
 }
 
 .service-card img {
-  width: 5.5rem;
-  height: 5.5rem;
+  width: 4rem;
+  height: 4rem;
   object-fit: contain;
   filter: brightness(100);
 }
@@ -201,9 +195,6 @@ a   { text-decoration: none; color: inherit; }
 }
 
 .about-bg {
-  background: transparent; /* Eliminar fondo directo */
-  position: relative;
-  border-radius: 22px;
   padding: 4rem 2rem;
 }
 
@@ -225,7 +216,6 @@ a   { text-decoration: none; color: inherit; }
   top: -3.5rem; 
   left: 3rem;
   z-index: 5;
-  text-transform: uppercase;
 }
 
 .about-inner {
@@ -233,6 +223,7 @@ a   { text-decoration: none; color: inherit; }
   grid-template-columns: 1.2fr 1fr;
   align-items: center;
   margin-left: clamp(0rem, 4vw, 5rem);
+  gap: 2rem;
 }
 
 .about-subheading {
@@ -245,6 +236,7 @@ a   { text-decoration: none; color: inherit; }
 }
 .about-left {
   padding-top: clamp(1rem, 2vw, 2.2rem);
+  min-width: 0;
 }
 
 .about-text {
@@ -256,19 +248,17 @@ a   { text-decoration: none; color: inherit; }
 }
 
 .about-right {
-  position: relative;
   display: flex;
+  min-width: 0;
   justify-content: flex-end;
 }
 
 .about-img {
-  width: 140%; 
-  max-width: 750px;
-  border-radius: 14px;
-  /* object-fit: cover; */
-  transform: translateX(10%); 
-  margin-left: 20px;
-  box-shadow: 10px 10px 30px rgba(0,0,0,0.15);
+  width: min(100%, 750px);
+  border-radius: 12px;
+  transform: none;
+  margin-left: 0;
+  box-shadow: 10px 10px 30px var(--shadow);
   z-index: 3;
 }
 
@@ -297,12 +287,10 @@ a   { text-decoration: none; color: inherit; }
   min-height: clamp(10.5rem, 13vw, 12.5rem);
   padding: 1rem;
   font-size: clamp(1.05rem, 1.25vw, 1.3rem);
-  line-height: 1.2;
   text-align: center;
   font-weight: 500;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .about-badge--left { border-radius: 10px 40px 10px 40px }
@@ -407,6 +395,7 @@ a   { text-decoration: none; color: inherit; }
   padding: 8rem 8.4rem ;
   margin-top: 0;
   background: var(--navy-dark);
+  border-radius: 50px 0 0 0;
 }
 
 .contact-form-bckr{
@@ -414,7 +403,7 @@ a   { text-decoration: none; color: inherit; }
   border-radius: 18px;
   background: var(--card-blue);
   padding: 0.25rem 0.9rem 1.15rem;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 12px 24px var(--shadow);
 }
 .contact-section__bgimg {
   position: absolute;
@@ -457,7 +446,7 @@ a   { text-decoration: none; color: inherit; }
   font-weight: 600;
   /* font-size: 1rem; */
   /* line-height: 1.35; */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px var(--shadow);
 }
 
 .info-card a {
@@ -576,10 +565,13 @@ a   { text-decoration: none; color: inherit; }
     padding-inline: 0;
   }
   .hero__tagline {
-    font-size: clamp(0.8rem, 3.6vw, 1.4rem);
+    font-size: clamp(1.3rem, 5vw, 1.7rem);
     white-space: nowrap;
     text-align: center;
     width: 100%;
+  }
+  .hero__img {
+    object-position: center 60%;
   }
   .services-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));

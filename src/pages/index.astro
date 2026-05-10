@@ -1,30 +1,65 @@
 ---
 // src/pages/index.astro
 import '../styles/global.css';
-import '../styles/global.css';
 import '@fontsource/koulen';
 import '@fontsource/kumbh-sans';
 import '@fontsource/inter';
 ---
 
 <!DOCTYPE html>
-<html lang="en">
-<link rel="canonical" href="https://www.a2bcargo.com/" />
-<link rel="icon" type="ico" href="/favicon.ico" />
-<!-- Open Graph (para compartir en redes/WhatsApp/LinkedIn) -->
-<meta property="og:title" content="A2B Cargo — Expert Freight Forwarding & Export Services" />
-<meta property="og:description" content="A2B Cargo LLC handles all aspects of your shipment: AES filing, export documentation, ocean & truck rates, and logistics support." />
-<meta property="og:image" content="https://www.a2bcargo.com/assets/og-image.jpg" />
-<meta property="og:url" content="https://www.a2bcargo.com/" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary_large_image" />
-
+<html lang="en-US">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A2B Cargo - We'll Get It There</title>
+  <meta name="description" content="A2B Cargo LLC, Kennesaw GA — Freight forwarding, AES filing, ocean & truck rate quotation, export documentation and consulting. Door-to-door service with a single point of contact." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://www.a2bcargo.com/" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="preload" as="image" href="/assets/main-photo.webp" />
+  <title>A2B Cargo | Freight Forwarding & Export Services in Kennesaw, GA</title>
 
-<meta name="description" content="A2B Cargo LLC, Kennesaw GA — Freight forwarding, AES filing, ocean & truck rate quotation, export documentation and consulting. Door-to-door service with a single point of contact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="A2B Cargo" />
+  <meta property="og:title" content="A2B Cargo | Freight Forwarding & Export Services in Kennesaw, GA" />
+  <meta property="og:description" content="A2B Cargo LLC handles shipment scheduling, AES filing, export documentation, and logistics support." />
+  <meta property="og:url" content="https://www.a2bcargo.com/" />
+  <meta property="og:image" content="https://www.a2bcargo.com/assets/og-image.jpg" />
+  <meta property="og:image:alt" content="A2B Cargo freight forwarding and export services" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="A2B Cargo | Freight Forwarding & Export Services in Kennesaw, GA" />
+  <meta name="twitter:description" content="A2B Cargo LLC handles shipment scheduling, AES filing, export documentation, and logistics support." />
+  <meta name="twitter:image" content="https://www.a2bcargo.com/assets/og-image.jpg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "Organization"],
+    "@id": "https://www.a2bcargo.com/#organization",
+    "name": "A2B Cargo LLC",
+    "url": "https://www.a2bcargo.com",
+    "logo": "https://www.a2bcargo.com/assets/a2bcargo.avif",
+    "image": "https://www.a2bcargo.com/assets/og-image.jpg",
+    "description": "Freight forwarding, AES filing, ocean & truck rate quotation, export documentation and consulting. Door-to-door service with a single point of contact.",
+    "telephone": "+16782292539",
+    "email": "Dave@a2bcargo.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1255 Rolling Oaks Drive",
+      "addressLocality": "Kennesaw",
+      "addressRegion": "GA",
+      "postalCode": "30152",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "telephone": "+16782292539",
+      "email": "Dave@a2bcargo.com",
+      "areaServed": "US"
+    },
+    "sameAs": []
+  }
+  </script>
 </head>
 <body>
   <!-- ══ NAVBAR ══ -->
@@ -34,12 +69,21 @@ import '@fontsource/inter';
 
   <!-- ══ HERO — aerial ship ══ -->
   <section class="hero">
-    <img
-      class="hero__img"
-      src="../assets/main-photo.webp"
-      alt="Aerial view of a cargo container ship"
-      fetchpriority="high"
-    />
+    <picture>
+      <source
+        srcset="/assets/main-photo-hd.jpg"
+        media="(min-width: 1200px)"
+      />
+      <img
+        class="hero__img"
+        src="/assets/main-photo.webp"
+        alt="Aerial view of a cargo container ship"
+        fetchpriority="high"
+        decoding="async"
+        width="1920"
+        height="1080"
+      />
+    </picture>
     <div class="hero__overlay">
       <h1 class="hero__tagline">All Your Shipping Needs in One Place</h1>
     </div>
@@ -52,7 +96,7 @@ import '@fontsource/inter';
 
       <!-- Logo -->
       <div class="logo-wrap">
-        <img class="logo-wrap__img" src="../assets/a2bcargo.avif" alt="A2B Cargo Logo" />
+        <img class="logo-wrap__img" src="/assets/a2bcargo.avif" alt="A2B Cargo Logo" />
       </div>
 
       <p class="services-title">Our Services</p>
@@ -60,34 +104,32 @@ import '@fontsource/inter';
 
       <div class="services-grid">
         <div class="service-card">
-          <span class="service-card__label">Logistics </br> support</span>
-          <img src="../assets/conveyor-belt.svg" alt="Conveyor belt"/>
+          <span class="service-card__label">Logistics <br> support</span>
+          <img src="/assets/conveyor-belt.svg" alt="Conveyor belt" width="48" height="48"/>
         </div>
         <div class="service-card">
           <span class="service-card__label">AES filing</span>
-        <img src="../assets/files.svg" alt="File folder"/>
+          <img src="/assets/files.svg" alt="File folder" width="48" height="48"/>
         </div>
         <div class="service-card">
           <span class="service-card__label">Ocean & Truck Rate Quotation</span>
-           <img src="../assets/safety.svg"/ alt="Safety shield">
+          <img src="/assets/safety.svg" alt="Safety shield" width="48" height="48">
         </div>
         <div class="service-card">
           <span class="service-card__label">Export documentation</span>
-           <img src="../assets/cases.svg" alt="Briefcases"/>
+          <img src="/assets/cases.svg" alt="Briefcases" width="48" height="48"/>
         </div>
         <div class="service-card">
-          <span class="service-card__label">Consulting export</br> regulations</span>
-           <img src="../assets/boat.svg" alt="Boat sailing"/>
+          <span class="service-card__label">Consulting export <br> regulations</span>
+          <img src="/assets/boat.svg" alt="Boat sailing" width="48" height="48"/>
         </div>
         <div class="service-card">
-          <span class="service-card__label">Contract </br> negotiations</span>
-           <img src="../assets/conveyor-belt.svg" alt="Conveyor belt"/>
+          <span class="service-card__label">Contract <br> negotiations</span>
+          <img src="/assets/conveyor-belt.svg" alt="Conveyor belt" width="48" height="48"/>
         </div>
       </div>
-
     </div>
   </section>
-
   <!-- ══ ABOUT US ══ -->
   <section class="about-section">
     <div class="about-outer">
@@ -236,29 +278,7 @@ import '@fontsource/inter';
       </div>
     </div>
   </section>
-
   <div class="footbar"></div>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FreightForwarder",
-    "name": "A2B Cargo LLC",
-    "url": "https://www.a2bcargo.com",
-    "telephone": "+16782292539",
-    "email": "Dave@a2bcargo.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "1255 Rolling Oaks Drive",
-      "addressLocality": "Kennesaw",
-      "addressRegion": "GA",
-      "postalCode": "30152",
-      "addressCountry": "US"
-    },
-    "description": "Expert freight forwarding, AES filing, export documentation and logistics support."
-  }
-  </script>
-
 </body>
 </html>
 <script>
