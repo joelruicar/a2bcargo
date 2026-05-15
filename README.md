@@ -5,7 +5,7 @@ This is the repository for the A2B Cargo LLC website.
 ## Summary
 To maintain the website, you only need to edit the index.astro file.  The system handles everything else. If build credits run out, you simply wait for the next monthly cycle or upgrade to a paid plan.
 
-## 🚀 Project Structure
+## Project Structure
 
 Inside of the project, you'll see the following folders and files:
 
@@ -35,11 +35,11 @@ You do not need advanced programming knowledge to update the text:
 
 The site uses Netlify's free plan, which has certain monthly limits:
 
-    Builds (Deployments): You have 300 free credits per month. Each time you upload a change to GitHub, it consumes 15 credits.
+-Builds (Deployments): You have 300 free credits per month. Each time you upload a change to GitHub, it consumes 15 credits.
 
-    Forms: The free plan allows you to receive up to 100 form submissions per month.   
+-Forms: The free plan allows you to receive up to 100 form submissions per month.   
 
-    Bandwidth: You have 100GB per month, which is more than enough for typical traffic.
+-Bandwidth: You have 100GB per month, which is more than enough for typical traffic.
 
 --------
 ## Technlical notes
