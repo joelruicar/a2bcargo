@@ -10,7 +10,12 @@
 
 [[redirects]]
   from = "/success"
-  to = "/success.html"
+  to = "/success/"
+  status = 200
+
+[[redirects]]
+  from = "/success/"
+  to = "/success/index.html"
   status = 200
 
 [[redirects]]

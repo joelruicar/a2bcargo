@@ -258,7 +258,15 @@ import '@fontsource/inter';
             </div>
             <div class="form-group">
               <label for="phone">*Phone</label>
-              <input type="tel" id="phone" name="phone" pattern="^\+?[\d\s().-]{7,20}$"  title="Type a valid phone number" />
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                inputmode="tel"
+                autocomplete="tel"
+                pattern="^\+?[\d\s().-]{7,20}$"
+                title="Type a valid phone number"
+              />
             </div>
           </div>
 
@@ -282,7 +290,41 @@ import '@fontsource/inter';
 </body>
 </html>
 <script>
+  const contactForm = document.querySelector('.contact-form') as HTMLFormElement | null;
+  const phoneInput = document.getElementById('phone') as HTMLInputElement | null;
   const heroImg = document.querySelector('.hero__img') as HTMLElement | null;
+  const phonePattern = /^\+?[\d\s().-]{7,20}$/;
+
+  const validatePhone = () => {
+    if (!phoneInput) {
+      return true;
+    }
+
+    const phoneValue = phoneInput.value.trim();
+
+    if (!phoneValue) {
+      phoneInput.setCustomValidity('');
+      return true;
+    }
+
+    if (!phonePattern.test(phoneValue)) {
+      phoneInput.setCustomValidity('Type a valid phone number.');
+      return false;
+    }
+
+    phoneInput.setCustomValidity('');
+    return true;
+  };
+
+  phoneInput?.addEventListener('input', validatePhone);
+
+  contactForm?.addEventListener('submit', (event) => {
+    if (!validatePhone()) {
+      event.preventDefault();
+      phoneInput?.reportValidity();
+      phoneInput?.focus();
+    }
+  });
 
   window.addEventListener('scroll', () => {
     const scrollValue = window.scrollY;
